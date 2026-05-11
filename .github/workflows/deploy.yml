@@ -44,7 +44,7 @@ jobs:
         run: ls -R .output || echo ".output directory not found"
 
       - name: Deploy to Cloudflare Workers
-        run: npx wrangler deploy
+        run: npx wrangler deploy --name awaazai --compatibility-date 2025-09-24 --compatibility-flags nodejs_compat
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
